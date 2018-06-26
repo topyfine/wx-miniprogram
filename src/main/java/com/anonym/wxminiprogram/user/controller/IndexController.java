@@ -4,6 +4,7 @@ import com.anonym.wxminiprogram.common.Constants;
 import com.anonym.wxminiprogram.service.CityService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,9 +21,13 @@ public class IndexController {
     @Autowired
     private CityService cityService;
 
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
+
     @RequestMapping(value = "/home", method = RequestMethod.POST, produces = Constants.MIME_JSON)
     public String home() {
-        log.warn(">>> hello log");
+        stringRedisTemplate.opsForValue().set("foo", "bar");
+        log.warn(">>> hello log" + "," + stringRedisTemplate.opsForValue().get("foo"));
         return "Hello spring boot!";
     }
 
