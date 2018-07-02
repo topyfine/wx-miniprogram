@@ -1,6 +1,7 @@
 package com.anonym.wxminiprogram.user.controller;
 
 import com.anonym.wxminiprogram.common.Constants;
+import com.anonym.wxminiprogram.domain.City;
 import com.anonym.wxminiprogram.service.CityService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,5 +35,19 @@ public class IndexController {
     @RequestMapping("/getcity")
     public String getCity() {
         return cityService.get().toString();
+    }
+
+    @RequestMapping("/testTx")
+    public void testTx() {
+        City city = new City();
+        city.setName("SQ");
+        city.setState("HN");
+        city.setCountry("CN");
+        city.setTestCaml("123456");
+        try {
+            cityService.add(city);
+        } catch (Exception e) {
+            log.info(">>> 添加记录异常", e);
+        }
     }
 }

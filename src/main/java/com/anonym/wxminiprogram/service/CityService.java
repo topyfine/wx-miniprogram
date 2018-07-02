@@ -4,6 +4,7 @@ import com.anonym.wxminiprogram.dao.CityMapper;
 import com.anonym.wxminiprogram.domain.City;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author 杨帆
@@ -18,5 +19,12 @@ public class CityService {
 
     public City get() {
         return cityMapper.findByState("CA");
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    public void add(City city) {
+        cityMapper.insert(city);
+        // id相同，测试回滚
+        cityMapper.insert(city);
     }
 }

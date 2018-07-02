@@ -1,8 +1,10 @@
 package com.anonym.wxminiprogram.dao;
 
 import com.anonym.wxminiprogram.domain.City;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.SelectKey;
 
 /**
  * @author 杨帆
@@ -15,4 +17,7 @@ public interface CityMapper {
     @Select("SELECT * FROM city WHERE state = #{state}")
     City findByState(String state);
 
+    @SelectKey(statement = "SELECT LAST_INSERT_ID()", keyProperty = "id", before = false, resultType = Long.class)
+    @Insert("insert into city(name, state, country, test_caml) values(#{name}, #{state}, #{country}, #{testCaml})")
+    int insert(City record);
 }
