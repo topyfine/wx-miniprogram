@@ -1,4 +1,4 @@
-package com.anonym.wxminiprogram.common;
+package com.anonym.wxminiprogram.common.consts;
 
 /**
  * @author 杨帆
