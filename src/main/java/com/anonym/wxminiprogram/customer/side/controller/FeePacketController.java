@@ -1,5 +1,6 @@
 package com.anonym.wxminiprogram.customer.side.controller;
 
+import com.anonym.wxminiprogram.common.consts.Constants;
 import com.anonym.wxminiprogram.common.vo.ResultCodeEnum;
 import com.anonym.wxminiprogram.common.vo.ResultList;
 import com.anonym.wxminiprogram.customer.side.controller.vo.FeePacketVO;
@@ -23,7 +24,7 @@ import java.util.List;
  * @apiNote 费率套餐API
  */
 @RestController
-@RequestMapping("/api/feepacket")
+@RequestMapping(Constants.API_CUSTOMER + "/feepacket")
 @Slf4j
 public class FeePacketController {
     @Autowired

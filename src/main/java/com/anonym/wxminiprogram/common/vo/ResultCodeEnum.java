@@ -18,7 +18,11 @@ public enum ResultCodeEnum {
     /**
      * 未查询到结果
      */
-    EMPTY_DATA("2", "empty data")
+    EMPTY_DATA("2", "empty data"),
+    /**
+     * 参数不合法
+     */
+    INVALID_PARAM("3", "invalid param")
     ;
 
     ResultCodeEnum(String code, String msg) {

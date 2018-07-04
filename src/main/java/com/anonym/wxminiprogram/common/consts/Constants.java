@@ -7,4 +7,12 @@ package com.anonym.wxminiprogram.common.consts;
  */
 public class Constants {
     public static final String MIME_JSON = "application/json;charset=UTF-8";
+    /**
+     * 用户端请求根路径
+     */
+    public static final String API_CUSTOMER = "/api/customer";
+    /**
+     * 渠道商端请求根路径
+     */
+    public static final String API_MERCHANT = "/api/merchant";
 }
