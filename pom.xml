@@ -41,11 +41,11 @@
 	</dependencyManagement>
 
 	<dependencies>
-		<!--还没想好要不要用spring security这个功能-->
-		<!--<dependency>
+		<!--启用spring security这个功能-->
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>-->
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>

@@ -15,4 +15,8 @@ public class Constants {
      * 渠道商端请求根路径
      */
     public static final String API_MERCHANT = "/api/merchant";
+    /**
+     * api
+     */
+    public static final String API_LOGIN = "/api/login";
 }
